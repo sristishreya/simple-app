@@ -2,10 +2,10 @@ const path = require('path');
 const express = require('express');
 const router= express.Router();
 const rootDir = require('../util/path');
+const successController = require('../controllers/success');
 
 
-router.get('/success',(req,res,next)=>{
-   res.sendFile(path.join(rootDir,'views','success.html'));
-});
+
+router.get('/success',successController.getSuccess);
 
 module.exports=router;
